@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Connect</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<style>
+    body {
+    font-family: "Lato", sans-serif;
+}
+
+
+
+.main-head{
+    height: 150px;
+    background: #FFF;
+   
+}
+
+.sidenav {
+    height: 100%;
+    background-color: rgb(20, 115, 170);
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+.main {
+    padding: 0px 10px;
+   
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 10%;
+    }
+
+    .register-form{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 40%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 40%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+
+.login-main-text{
+    margin-top: 20%;
+    padding: 60px;
+    color: #fff;
+}
+
+.login-main-text h2{
+    font-weight: 300;
+}
+
+.btn-black{
+    background-color: rgb(20, 115, 170) !important;
+    color: #fff;
+}
+</style>
+
+<body>
+    <div class="sidenav">
+        <div class="login-main-text">
+            <h2>Web Connect - Sign Up Page</h2>
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book.</p>
+        </div>
+    </div>
+    <div class="main">
+        <div class="col-md-6 col-sm-12">
+            <div class="login-form">
+                <form action="/" method="POST">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input name="NAME" type="text" class="form-control" placeholder="Name"><br>
+                        <label >Github Profile</label>
+                        <input name="Github" type="text" class="form-control" placeholder="Link"><br>
+                        <label >Linkedin Profile</label>
+                        <input name="Linkedin" type="text" class="form-control" placeholder="Link"><br>
+                        <label for="">E-mail ID</label>
+                        <input name="EMAIL" type="text" class="form-control" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input name="PASSWORD" type="text" class="form-control" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-black">Login</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <br>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
