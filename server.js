@@ -17,13 +17,13 @@ app.get("/", function (req, res) {
 //chat route
 app.get("/chat", function (req, res) {
 
-    res.sendFile(__dirname + "/view/chat/index.html")
+    res.sendFile(__dirname + "/view/chat/chat.html")
 })
 
 //error route
 app.get("/error", function (req, res) {
 
-    res.sendFile(__dirname+"/view/error/index.html")
+    res.sendFile(__dirname+"/view/error/error.html")
 })
 
 
@@ -34,12 +34,10 @@ app.get("/error", function (req, res) {
 app.post("/", function (req, res) {
     if (req.body.PASSWORD == "fourmuskeeters" || req.body.PASSWORD == 100229) {
         res.redirect("/chat")
-
     }
     else{
         res.redirect("/error")
     }
-    
 })
 
 
