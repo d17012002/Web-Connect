@@ -1,8 +1,10 @@
 
 const express = require('express');
 const bodyParser = require('body-parser')
+
 const app = express();
 
+app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -11,31 +13,36 @@ app.use(express.static('public'))
 
 //home route - sign up
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/view/login/login.html")
+    res.render("login")
 })
 
 //chat route
 app.get("/chat", function (req, res) {
-
-    res.sendFile(__dirname + "/view/chat/chat.html")
+    res.render('chat', {
+        name: app.get('name_var'), 
+        linkedin: app.get('linkedin_var'), 
+        twitter: app.get('twitter_var'),
+        github: app.get('github_var')});
 })
 
 //error route
 app.get("/error", function (req, res) {
 
-    res.sendFile(__dirname+"/view/error/error.html")
+    res.render("error")
 })
 
-
-// Redirecting from login to chat
-
-
-
 app.post("/", function (req, res) {
+ 
+    app.set('name_var', req.body.Name);            // In "/" route store variable for "/chat" route
+    app.set('linkedin_var', req.body.Linkedin);
+    app.set('twitter_var', req.body.Twitter);
+    app.set('github_var', req.body.Github);
+
     if (req.body.PASSWORD == "fourmuskeeters" || req.body.PASSWORD == 100229) {
-        res.redirect("/chat")
+        res.redirect("/chat");
+
     }
-    else{
+    else {
         res.redirect("/error")
     }
 })
