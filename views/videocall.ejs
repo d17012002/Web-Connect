@@ -1,12 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web-Connect : VideoCall</title>
+    <title>Web-Connect: VideoCall</title>
+    <!-- <link rel="stylesheet" type="text/css" href="/videocall.css"> -->
 </head>
+
 <body>
-    video call server under construction... :)
+    <h1 class="title">Web-Connect</h1>
+    <p id="notification" hidden></p>
+    <div class="entry-modal" id="entry-modal">
+        <p>Create or Join Meeting</p>
+        <input id="room-input" class="room-input" placeholder="Enter Room ID">
+        <div>
+            <button onclick="createRoom()">Create Room</button>
+            <button onclick="joinRoom()">Join Room</button>
+        </div>
+    </div>
+    <div class="meet-area">
+        <video id="remote-video"></video>
+        <video id="local-video"></video>
+    </div>
 </body>
+
+<script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+<script src="/videocall.js"></script>
+
 </html>

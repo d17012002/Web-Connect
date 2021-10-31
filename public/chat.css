@@ -668,3 +668,20 @@ body {
   #frame .content .message-input .wrap button:focus {
     outline: none;
   }
+
+  #VC {
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    background-color: #ccc;
+    animation: glow 1s infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 2px -1.2px #ffffff;
+    }
+    to {
+      box-shadow: 0 0 2px 1.2px #ffffff;
+    }
+  }
