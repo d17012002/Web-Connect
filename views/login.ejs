@@ -15,19 +15,19 @@
     font-family: "Lato", sans-serif;
 }
 
-
-
 .main-head{
     height: 150px;
-    background: #FFF;
+    background: rgb(207, 236, 203);
    
 }
 
 .sidenav {
     height: 100%;
-    background-color: rgb(20, 115, 170);
+    background-image: url("https://media0.giphy.com/media/2tNvsKkc0qFdNhJmKk/giphy.gif");
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -74,24 +74,39 @@
 
 
 .login-main-text{
-    margin-top: 20%;
     padding: 60px;
     color: #fff;
+
 }
+.main img{
+    position: absolute;
+    width: 170px;
+    right: 20px;
+    bottom: 30px;
+}
+
 
 .login-main-text h2{
     font-weight: 300;
 }
 
 .btn-black{
-    background-color: rgb(20, 115, 170) !important;
-    color: #fff;
+    background-color: rgb(22, 133, 236) !important;
+    color: rgb(216, 216, 216);
+}
+.login-logo{
+    position: relative;
+    left: 130px;
+    width: 150px;
+    box-shadow: 6px 6px 2px rgba(128, 128, 128, 0.801);
+    border-radius: 75px;
 }
 </style>
 
 <body>
     <div class="sidenav">
         <div class="login-main-text">
+            <img class="login-logo" src="/img/logo.png" alt="Computer man">
             <h2>Web Connect - Sign Up Page</h2>
 
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
@@ -100,6 +115,7 @@
         </div>
     </div>
     <div class="main">
+        <img src="https://acegif.com/wp-content/gif/panda-93.gif" alt="panda">
         <div class="col-md-6 col-sm-12">
             <div class="login-form">
                 <form action="/" method="POST">
