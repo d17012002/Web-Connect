@@ -8,6 +8,7 @@ var peer = null;
 var currentPeer = null
 var screenSharing = false
 function createRoom() {
+    
     console.log("Creating Room")
     let room = document.getElementById("room-input").value;
     if (room == " " || room == "") {
@@ -34,6 +35,8 @@ function createRoom() {
         })
         currentPeer = call;
     })
+    document.getElementById("end-call").setAttribute("style", "visibility: visible;");
+
 }
 
 function setLocalStream(stream) {
@@ -89,6 +92,7 @@ function joinRoom() {
         })
 
     })
+    document.getElementById("end-call").setAttribute("style", "visibility: visible;");
 }
 
 

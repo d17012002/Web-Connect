@@ -2,18 +2,26 @@
 
 <head>
     <title>Web-Connect: VideoCall</title>
-    <!-- <link rel="stylesheet" type="text/css" href="/videocall.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/videocall.css">
 </head>
 
 <body>
-    <h1 class="title">Web-Connect</h1>
+    <div class="jumbotron">
+        <h3 class="title">Web-Connect : VideoCall</h3>
+    </div>
+    <a id="end-call" class="btn btn-danger" href="chat">Leave Call</a>
+
     <p id="notification" hidden></p>
-    <div class="entry-modal" id="entry-modal">
+    <div class="entry-modal" id="entry-modal"><br>
+        <h6>User: <%=name%></h6>
         <p>Create or Join Meeting</p>
         <input id="room-input" class="room-input" placeholder="Enter Room ID">
         <div>
-            <button onclick="createRoom()">Create Room</button>
-            <button onclick="joinRoom()">Join Room</button>
+            <br>
+            <button class="btn btn-success" onclick="createRoom()">Create Room</button>
+            <button class="btn btn-outline-light" onclick="joinRoom()">Join Room</button>
         </div>
     </div>
     <div class="meet-area">

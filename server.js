@@ -3,8 +3,6 @@ const express = require('express');
 const bodyParser = require('body-parser')
 
 const app = express()
-const server = require('http').Server(app)
-const io = require('socket.io')(server)
 
 app.set("view engine", "ejs");
 
@@ -30,7 +28,9 @@ app.get("/chat", function (req, res) {
 
 //Video call route
 app.get("/videocall", function (req, res) {
-    res.render("videocall")
+    res.render('videocall', {
+        name: app.get('name_var'),
+    });
 })
 
 //error route
