@@ -33,6 +33,12 @@ app.get("/videocall", function (req, res) {
     });
 })
 
+
+//Chatcord
+app.get("/chatcord", function (req, res) {
+    res.render("chatcord")
+})
+
 //error route
 app.get("/error", function (req, res) {
 
