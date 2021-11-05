@@ -3,8 +3,6 @@ const express = require('express');
 const bodyParser = require('body-parser')
 
 const app = express()
-const server = require('http').Server(app)
-const io = require('socket.io')(server)
 
 app.set("view engine", "ejs");
 
@@ -30,7 +28,9 @@ app.get("/chat", function (req, res) {
 
 //Video call route
 app.get("/videocall", function (req, res) {
-    res.render("videocall")
+    res.render('videocall', {
+        name: app.get('name_var'),
+    });
 })
 
 //error route
@@ -60,7 +60,26 @@ app.post("/error", function (req, res) {
     res.redirect("/")
 })
 
+
 //server created
-app.listen(3000, function () {
+const server = app.listen(3000, function () {
     console.log("Server running on PORT 3000.");
 })
+
+//socket io connections
+const io = require('socket.io')(server,{
+    cors:{
+        origin:"*"
+    }
+})
+
+io.on('connection',(socket) =>{
+    console.log("Welcome to Web-Connect " + socket.id)
+
+    socket.on('sent_message', data =>{
+        console.log(data)
+        socket.broadcast.emit('sent_message', data)
+    })
+
+})
+

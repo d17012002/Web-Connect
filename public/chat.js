@@ -32,24 +32,40 @@ $("#status-options ul li").click(function() {
 	$("#status-options").removeClass("active");
 });
 
-function newMessage() {
+const socket = io('http://localhost:3000')
+socket.on('connection')
+
+
+
+function sentMessage() {
 	message = $(".message-input input").val();
 	if($.trim(message) == '') {
 		return false;
 	}
-	$('<li class="sent"><img src="https://i.pinimg.com/originals/fd/14/a4/fd14a484f8e558209f0c2a94bc36b855.png" alt="" /><p>' + message + '</p></li>').appendTo($('.messages ul'));
+	$('<li class="sent"><p>' + message + '</p></li>').appendTo($('.messages ul'));
 	$('.message-input input').val(null);
 	$('.contact.active .preview').html('<span>You: </span>' + message);
+	$(".messages").animate({ scrollTop: $(document).height() }, "fast");
+	socket.emit('sent_message',message)
+};
+
+function receivedMessage(data) {
+	$('<li class="replies"><p>' + data + '</p></li>').appendTo($('.messages ul'));
+	$('.contact.active .preview').html(data);
 	$(".messages").animate({ scrollTop: $(document).height() }, "fast");
 };
 
 $('.submit').click(function() {
-  newMessage();
+  sentMessage();
 });
 
 $(window).on('keydown', function(e) {
   if (e.which == 13) {
-    newMessage();
+    sentMessage();
     return false;
   }
 });
+
+socket.on('sent_message',data =>{
+	receivedMessage(data)
+})

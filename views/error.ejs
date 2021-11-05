@@ -8,6 +8,7 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 	<title>Error</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet"> 
   <link rel="icon" href="img/logo.png">
 	
@@ -106,19 +107,16 @@ body {
 
 </style>
 <body>
-
 	<div id="notfound">
 		<div class="notfound">
-			<div class="notfound-404">
+			<div style="position: relative; bottom: 60px;" class="notfound-404">
 				<h1>4<span>0</span>4</h1>
 			</div>
 			<p>ERROR! Invalid password please try again...</p>
       <form action="/error" method="POST" >
-        <button type="submit" class="btn btn-black">Back</button>
+        <button class="btn btn-outline-light" type="submit">Back</button>
       </form>
 		</div>
 	</div>
-
 </body>
-
 </html>
