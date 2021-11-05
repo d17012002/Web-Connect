@@ -60,7 +60,26 @@ app.post("/error", function (req, res) {
     res.redirect("/")
 })
 
+
 //server created
-app.listen(3000, function () {
+const server = app.listen(3000, function () {
     console.log("Server running on PORT 3000.");
 })
+
+//socket io connections
+const io = require('socket.io')(server,{
+    cors:{
+        origin:"*"
+    }
+})
+
+io.on('connection',(socket) =>{
+    console.log("Welcome to Web-Connect " + socket.id)
+
+    socket.on('sent_message', data =>{
+        console.log(data)
+        socket.broadcast.emit('sent_message', data)
+    })
+
+})
+
