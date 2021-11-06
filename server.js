@@ -68,7 +68,7 @@ app.post("/error", function (req, res) {
 
 
 //server created
-const server = app.listen(3000, function () {
+const server = app.listen(process.env.PORT || 3000, function () {
     console.log("Server running on PORT 3000.");
 })
 
