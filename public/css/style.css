@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 :root {
-	--dark-color-a: #667aff;
-	--dark-color-b: #7386ff;
-	--light-color: #e6e9ff;
+	--dark-color-a: #2c3e50;
+	--dark-color-b: #2c3e50;
+	--light-color: rgb(245, 247, 247);
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
 }
@@ -19,6 +19,7 @@ body {
 	font-size: 16px;
 	background: var(--light-color);
 	margin: 20px;
+	background-color: #c5e2e2;
 }
 
 ul {
@@ -36,15 +37,18 @@ a {
 	color: var(--dark-color-a);
 	border: 0;
 	font-size: 17px;
+	border-radius: 30px;
 }
 
 /* Chat Page */
 
 .chat-container {
 	max-width: 1100px;
-	background: #fff;
+	background: #c5e2e2;
 	margin: 30px auto;
 	overflow: hidden;
+	border-radius: 30px;
+	box-shadow: 8px 8px 4px rgba(128, 128, 128, 0.801);
 }
 
 .chat-header {
@@ -114,6 +118,7 @@ a {
 .chat-form-container {
 	padding: 20px 30px;
 	background-color: var(--dark-color-a);
+	padding-left: 260px;
 }
 
 .chat-form-container form {
@@ -125,26 +130,38 @@ a {
 	padding: 5px;
 	height: 40px;
 	flex: 1;
+	border-radius: 30px;
 }
+@media only screen and (max-width: 600px) {
+	.chat-form-container {
+		padding: 20px 30px;
+		background-color: var(--dark-color-a);
+		
+	}
+  }
 
 /* Join Page */
 .join-container {
 	max-width: 500px;
 	margin: 80px auto;
 	color: #fff;
+	
 }
 
 .join-header {
 	text-align: center;
 	padding: 20px;
 	background: var(--dark-color-a);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	
 }
 
 .join-main {
 	padding: 30px 40px;
 	background: var(--dark-color-b);
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
 }
 
 .join-main p {
