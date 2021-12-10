@@ -66,7 +66,7 @@ app.post("/", function (req, res) {
       count++;
   }
   if(count==pattern.length){
-    res.redirect("/chat");
+    res.redirect("/chatcordLogin");
   }else{
     res.redirect("/error");
   }
@@ -111,13 +111,12 @@ app.get("/chatcord", function (req, res) {
 });
 
 app.post("/chatcord", function (req, res) {
-  res.redirect("/chat");
+  res.redirect("/chatcordLogin");
 });
 
-// Set static folder
-// app.use(express.static(path.join(__dirname, "public")));
 
-const botName = "ChatCord Bot";
+
+const botName = "WebConnect Bot ";
 
 // Run when client connects
 io.on("connection", (socket) => {

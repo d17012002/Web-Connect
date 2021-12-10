@@ -666,13 +666,3 @@ body {
   #frame .content .message-input .wrap button:focus {
     outline: none;
   }
-
-  /* @keyframes glow {
-    from {
-      box-shadow: 0 0 2px -1.2px #ffffff;
-    }
-    to {
-      box-shadow: 0 0 2px 1.2px #ffffff;
-    }
-  } */
-
