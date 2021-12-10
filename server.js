@@ -115,7 +115,7 @@ app.post("/chatcord", function (req, res) {
 });
 
 // Set static folder
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 
 const botName = "ChatCord Bot";
 
