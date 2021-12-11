@@ -12,6 +12,32 @@ body {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
     -webkit-font-smoothing: antialiased;
   }
+
+  .back{
+    position: relative;
+    bottom: 280px;
+    right: 35px;
+    animation: back;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes back {
+    0%{
+      position: relative;
+      bottom: 280px;
+      right: 35px;
+    }
+    50%{
+      position: relative;
+      bottom: 280px;
+      right: 39px;
+    }
+    100%{
+      position: relative;
+      bottom: 280px;
+      right: 35px;
+    }
+  }
   
   #frame {
     box-shadow: 8px 8px 4px rgba(128, 128, 128, 0.801);
@@ -665,4 +691,9 @@ body {
   }
   #frame .content .message-input .wrap button:focus {
     outline: none;
+  }
+  @media only screen and (max-width: 600px) {
+    #back{
+      visibility: hidden;
+    }
   }

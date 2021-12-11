@@ -64,3 +64,38 @@ button{
     visibility: hidden;
     
 }
+.remote{
+    position: relative;
+    top: 150px;
+}
+
+.back{
+    position: relative;
+    left: 475px;
+    top: 75px;
+    animation: back;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes back {
+      0%{
+        position: relative;
+        left: 475px;
+        top: 75px;
+      }
+      50%{
+        position: relative;
+        left: 471px;
+        top: 75px;
+      }
+      100%{
+        position: relative;
+        left: 475px;
+        top: 75px;
+      }
+  }
+  @media only screen and (max-width: 600px) {
+    #back{
+      visibility: hidden;
+    }
+  }

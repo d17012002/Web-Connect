@@ -201,7 +201,7 @@ a {
     width: 50px;
     height: 50px;
 	left: 350px;
-	top: 135px;
+	top: 125px;
     border-radius: 100px;
 	box-shadow: 5px 4px 3px 0.5px grey;
     background-color: #ccc;
@@ -211,7 +211,7 @@ a {
     width: 50px;
     height: 50px;
 	left: 350px;
-	top: 202px;
+	top: 190px;
     border-radius: 100px;
 	box-shadow: 5px 4px 3px 0.5px grey;
     background-color: #ccc;
@@ -221,12 +221,21 @@ a {
     width: 50px;
     height: 50px;
 	left: 350px;
-	top: 267px;
+	top: 255px;
     border-radius: 100px;
 	box-shadow: 5px 4px 3px 0.5px grey;
     background-color: white;
   }
-
+#user{
+	position: absolute;
+    width: 50px;
+    height: 50px;
+	left: 350px;
+	top: 320px;
+    border-radius: 100px;
+	box-shadow: 5px 4px 3px 0.5px grey;
+    background-color: white;
+}
 
 @media (max-width: 700px) {
 	.chat-main {
@@ -236,4 +245,35 @@ a {
 	.chat-sidebar {
 		display: none;
 	}
+	#VC {
+		position: absolute;
+		width: 35px;
+		height: 35px;
+		left:5px;
+		top: 135px;
+		border-radius: 100px;
+		box-shadow: 3px 2px 1px 0.1px grey;
+		background-color: #ccc;
+	  }
+	#pChat {
+		position: absolute;
+		width: 35px;
+		height: 35px;
+		left:5px;
+		top: 202px;
+		border-radius: 100px;
+		box-shadow: 3px 2px 1px 0.1px grey;
+		background-color: #ccc;
+	
+	  }
+	#logout {
+		position: absolute;
+		width: 35px;
+		height: 35px;
+		left:5px;
+		top: 267px;
+		border-radius: 100px;
+		box-shadow: 3px 2px 1px 0.1px grey;
+		background-color: white;
+	  }
 }

@@ -3,6 +3,10 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const http = require("http");
 const socketio = require("socket.io");
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost:27017/webconnectDB", {
+  useNewUrlParser: true,
+});
 const formatMessage = require("./utils/messages");
 const {
   userJoin,
@@ -21,9 +25,62 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Including static files - CSS and JS
 app.use(express.static("public"));
 
+// MongoDB - mongoose database :
+
+//Schema structure
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, "Name is compulsory"],
+  },
+  password: {
+    type: String,
+    required: [true, "Password is compulsory"],
+  },
+});
+
+// collection in database (model)
+const User = mongoose.model("User", userSchema);
+
+// default users
+const anurag = new User({
+  name: "Anurag Kumar",
+  password: "anurag123",
+});
+const ansh = new User({
+  name: "Ansh Chauhan",
+  password: "ansh123",
+});
+const subs = new User({
+  name: "Subhransu Majhi",
+  password: "subs123",
+});
+const anant = new User({
+  name: "Anant Dubey",
+  password: "anant123",
+});
+
+const defaultUsers = [anurag, ansh, subs, anant];
+
 //home route - sign up
 app.get("/", function (req, res) {
-  res.render("login");
+  User.find(function (err, users) {
+    if (users.length === 0) {
+      User.insertMany(defaultUsers, function (err) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("Default users sucessfully saved");
+        }
+      });
+      res.redirect("/");
+    }
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("login");
+    }
+  });
 });
 
 //chat route
@@ -54,21 +111,58 @@ app.post("/", function (req, res) {
   app.set("user_var", req.body.User);
   app.set("github_var", req.body.Github);
 
-  var text = req.body.User;       
-  var pattern = "vitbhopal.ac.in";
-  var count = 0;
+  var email = req.body.User;
+  var NAME = req.body.Name;
+  var pass = req.body.PASSWORD;
 
-  // Lgic behind vitbhopal domain login only
-  for(let j=text.length - 15; j<text.length; j++){
-    if(text[j]!=pattern[count]){
-        break;
+  // storing documents in database -> Sign in
+  if (req.body.btn1 === "signIn") {
+    if (NAME === "" || pass === "") {
+      res.redirect("/error");
+    } else {
+      if (NAME != "" && pass != "" && email != "") {
+        const newUser = new User({
+          name: NAME,
+          password: pass,
+        });
+        newUser.save();
+      } else {
+        res.redirect("/error");
       }
-      count++;
+
+      // Logic behind vitbhopal domain signIn only
+      var pattern = "vitbhopal.ac.in";
+      var count = 0;
+      for (let j = email.length - 15; j < email.length; j++) {
+        if (email[j] != pattern[count]) {
+          break;
+        }
+        count++;
+      }
+      if (count == pattern.length) {
+        res.redirect("/chatcordLogin");
+      } else {
+        res.redirect("/error");
+      }
+    }
   }
-  if(count==pattern.length){
-    res.redirect("/chatcordLogin");
-  }else{
-    res.redirect("/error");
+  if (req.body.btn2 === "login") {
+    User.find({ name: NAME }, function (err, users) {
+      if (err) {
+        console.log(err);
+      }
+      if (!users.length) {
+        res.redirect("/error");
+      } else {
+        users.forEach(function (user) {
+          if (pass === user.password) {
+            res.redirect("/chatcordLogin");
+          } else {
+            res.redirect("/error");
+          }
+        });
+      }
+    });
   }
 });
 
@@ -97,7 +191,18 @@ io.on("connection", (socket) => {
   });
 });
 
-//Chatcord - under construction
+//users list
+app.get("/users", function(req, res){
+  User.find(function(err, users){
+    if(err){
+      console.log(err);
+    }else{
+      res.render("users", {key: users});
+    }
+  });
+});
+
+//Chatcord
 app.get("/chatcordLogin", function (req, res) {
   res.render("chatcordLogin");
 });
@@ -113,8 +218,6 @@ app.get("/chatcord", function (req, res) {
 app.post("/chatcord", function (req, res) {
   res.redirect("/chatcordLogin");
 });
-
-
 
 const botName = "WebConnect Bot ";
 

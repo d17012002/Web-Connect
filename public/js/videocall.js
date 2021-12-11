@@ -27,6 +27,7 @@ function createRoom() {
             console.log(err)
         })
         notify("Waiting for peer to join.")
+        
     })
     peer.on('call', (call) => {
         call.answer(local_stream);
@@ -35,8 +36,10 @@ function createRoom() {
         })
         currentPeer = call;
     })
+    document.querySelector(".back").setAttribute("style", "visibility: hidden;");
+    document.querySelector("#local-video").classList.remove("remote");
+    document.querySelector("#remote-video").classList.remove("remote");
     document.getElementById("end-call").setAttribute("style", "visibility: visible;");
-
 }
 
 function setLocalStream(stream) {
@@ -93,6 +96,9 @@ function joinRoom() {
 
     })
     document.getElementById("end-call").setAttribute("style", "visibility: visible;");
+    document.querySelector(".back").setAttribute("style", "visibility: hidden;");
+    document.querySelector("#local-video").classList.remove("remote");
+    document.querySelector("#remote-video").classList.remove("remote");
 }
 
 

@@ -1,0 +1,64 @@
+<!-- Header included -->
+<%- include("./partials/header.ejs") %>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+/>
+<style>
+  body {
+    background: #c5e2e2;
+  }
+  .jumbotron {
+    border-radius: 0;
+    padding-top: 28px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: white;
+    background: #2c3e50;
+    height: 100px;
+  }
+  .userlist {
+    align-content: left;
+    text-align: left;
+    padding-bottom: 100px;
+    line-height: 20px;
+    background: #2c3e50;
+    color: white;
+    width: 35%;
+    position: relative;
+    top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 2px rgba(128, 128, 128, 0.801);
+  }
+  .fa-user {
+      position: absolute;
+      left: 330px;
+  }
+  .foot {
+    width: 100%;
+    height: 30px;
+  }
+</style>
+<body>
+  <div class="jumbotron">
+    <h3 class="title">Web Connect : Users</h3>
+  </div>
+  <div class="container">
+    <center>
+      <div class="userlist">
+          <%for(var i=0; i<key.length; i++){%>
+            <h5><%= i+1 %>.     <%= key[i].name %> <i class="far fa-user"></i></h5>
+          <%}%>
+        <!-- <h5>2. Anurag Kumar <i class="far fa-user"></i></h5>
+        <h5>3. Anurag Kumar <i class="far fa-user"></i></h5>
+        <h5>4. Anurag Kumar <i class="far fa-user"></i></h5>
+        <h5>5. Anurag Kumar <i class="far fa-user"></i></h5> -->
+      </div>
+    </center>
+  </div>
+</body>
+
+<!-- footer included -->
+<%-include("./partials/footer.ejs") %>

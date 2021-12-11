@@ -10,7 +10,8 @@
         <h3 class="title">Web-Connect : VideoCall</h3>
     </div>
     <a id="end-call" class="btn btn-danger" href="chatcordLogin">Leave Call</a>
-
+    
+    <a href="chatcordLogin" style="color: #32465a;"><i class="fas fa-arrow-left back"></i></a>
     <p id="notification" hidden></p>
     <div class="entry-modal" id="entry-modal"><br>
         <h6>User: <%=name%></h6>
@@ -23,8 +24,8 @@
         </div>
     </div>
     <div class="meet-area">
-        <video id="remote-video"></video>
-        <video id="local-video"></video>
+        <video class="remote" id="remote-video"></video>
+        <video class="remote" id="local-video"></video>
     </div>
     <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
     <script src="js/videocall.js"></script>
