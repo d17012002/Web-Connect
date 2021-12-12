@@ -692,8 +692,7 @@ body {
   #frame .content .message-input .wrap button:focus {
     outline: none;
   }
-  @media only screen and (max-width: 600px) {
-    #back{
-      visibility: hidden;
-    }
+  #subs{
+    border-radius: 50%;
+    border-width: 50%;
   }

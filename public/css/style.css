@@ -221,7 +221,7 @@ a {
     width: 50px;
     height: 50px;
 	left: 350px;
-	top: 255px;
+	top: 320px;
     border-radius: 100px;
 	box-shadow: 5px 4px 3px 0.5px grey;
     background-color: white;
@@ -231,7 +231,7 @@ a {
     width: 50px;
     height: 50px;
 	left: 350px;
-	top: 320px;
+	top: 255px;
     border-radius: 100px;
 	box-shadow: 5px 4px 3px 0.5px grey;
     background-color: white;
@@ -276,4 +276,14 @@ a {
 		box-shadow: 3px 2px 1px 0.1px grey;
 		background-color: white;
 	  }
+	  #user{
+		position: absolute;
+		width: 35px;
+		height: 35px;
+		left: 5px;
+		top: 255px;
+		border-radius: 100px;
+		box-shadow: 5px 4px 3px 0.5px grey;
+		background-color: white;
+	}
 }
