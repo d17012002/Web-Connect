@@ -39,22 +39,45 @@
   .foot {
     width: 100%;
     height: 30px;
+  
   }
+  .back{
+    position: relative;
+    left: 240px;
+    top: 75px;
+    animation: back;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes back {
+      0%{
+        position: relative;
+        left: 240px;
+        top: 75px;
+      }
+      50%{
+        position: relative;
+        left: 233px;
+        top: 75px;
+      }
+      100%{
+        position: relative;
+        left: 240px;
+        top: 75px;
+      }
+  }
+    
 </style>
 <body>
   <div class="jumbotron">
     <h3 class="title">Web Connect : Users</h3>
   </div>
-  <div class="container">
+  <div class="container" > <a style="color: #32465a ;" href="chatcordLogin"><i  class="fas fa-arrow-left back"  onclick="act()"></i></a>
     <center>
       <div class="userlist">
           <%for(var i=0; i<key.length; i++){%>
             <h5><%= i+1 %>.     <%= key[i].name %> <i class="far fa-user"></i></h5>
           <%}%>
-        <!-- <h5>2. Anurag Kumar <i class="far fa-user"></i></h5>
-        <h5>3. Anurag Kumar <i class="far fa-user"></i></h5>
-        <h5>4. Anurag Kumar <i class="far fa-user"></i></h5>
-        <h5>5. Anurag Kumar <i class="far fa-user"></i></h5> -->
       </div>
     </center>
   </div>
