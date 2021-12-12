@@ -48,23 +48,23 @@
       <div id="contacts">
         <ul>
           <li class="contact">
-            <div class="wrap">
+            <div class="wrap" id="new">
               <span class="contact-status online"></span>
               <img
                 src="https://media-exp1.licdn.com/dms/image/C5603AQFB-pVb8BSfbw/profile-displayphoto-shrink_800_800/0/1626953559559?e=1640822400&v=beta&t=NDkopNG5hN4ux6fc0HydhQjHYFSbvmv3fMmeGKFIlqQ"
                 alt="" />
-              <div class="meta">
-                <p class="name">Anant Server</p>
+              <div class="meta" id="replace" onclick = "replace2()">
+                <p class="name">Anant Dubey</p>
                 <p class="preview">You just got LITT up, Mike.</p>
               </div>
             </div>
           </li>
           <li class="contact active">
-            <div class="wrap">
+            <div class="wrap" id="new2">
               <span class="contact-status busy"></span>
-              <img src="https://miro.medium.com/fit/c/262/262/1*-TasmDvQZLqV_hz7LZef4Q.jpeg" alt="" />
-              <div class="meta">
-                <p class="name">Ansh Server</p>
+              
+              <div class="meta" id="replace1" onclick = "replace1()"><img id="ansh img"src="https://miro.medium.com/fit/c/262/262/1*-TasmDvQZLqV_hz7LZef4Q.jpeg" alt="" />
+                <p class="name">Ansh Chauhan</p>
                 <p class="preview">
                   Wrong. You take the gun, or you pull out a bigger one. Or,
                   you call their bluff. Or, you do any one of a hundred and
@@ -74,13 +74,14 @@
             </div>
           </li>
           <li class="contact">
-            <div class="wrap">
+            <div class="wrap" id="new1">
               <span class="contact-status away"></span>
-              <img
-                src="https://media-exp1.licdn.com/dms/image/D4E03AQHgBCW4Stl5jA/profile-displayphoto-shrink_800_800/0/1630666865146?e=1640822400&v=beta&t=sgUSXG3QmFovSvALftmYzQzjwOQ4mBiNlgt2iSZhF0s"
+              
+              <div class="meta" id="replace2" onclick = "replace()"><img id="anu img"
+                src="img/anurag.png"
+          
                 alt="" />
-              <div class="meta">
-                <p class="name">Anurag Server</p>
+                <p class="name">Anurag Kumar</p>
                 <p class="preview">
                   I was thinking that we could have chicken tonight, sounds
                   good?
@@ -89,13 +90,13 @@
             </div>
           </li>
           <li class="contact">
-            <div class="wrap">
+            <div class="wrap" id="new">
               <span class="contact-status online"></span>
-              <img
-                src="https://media-exp1.licdn.com/dms/image/C4D03AQG4ugraaRinrA/profile-displayphoto-shrink_800_800/0/1615792593106?e=1640822400&v=beta&t=96VuPlE4548u4221t9XK58Y9U4Go9LPj1EKRmO61Emc"
+              
+              <div class="meta" id="replace3" onclick = "replace3()"><img
+                src="img/subs.png" id="subs"
                 alt="" />
-              <div class="meta">
-                <p class="name">Subs Server</p>
+                <p class="name">Subransu Majhi</p>
                 <p class="preview">Mike, I know everything! I'm Donna..</p>
               </div>
             </div>
@@ -105,8 +106,8 @@
     </div>
     <div class="content">
       <div class="contact-profile" style="border-radius: 80px;">
-        <img src="https://miro.medium.com/fit/c/262/262/1*-TasmDvQZLqV_hz7LZef4Q.jpeg" alt="" />
-        <p>Ansh Server</p>
+        <img id="activem"src="https://miro.medium.com/fit/c/262/262/1*-TasmDvQZLqV_hz7LZef4Q.jpeg" alt="" />
+        <p id="changei">Ansh Chauhan</p>
       </div>
       <div class="messages">
         <ul>
@@ -135,6 +136,7 @@
       </div>
     </div>
   </div>
+  <div id="temp"></div>
   <script
     src="//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
