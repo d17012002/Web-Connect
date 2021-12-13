@@ -4,7 +4,7 @@ const path = require("path");
 const http = require("http");
 const socketio = require("socket.io");
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/webconnectDB", {
+mongoose.connect("mongodb+srv://webconnect:webconnect123@cluster0.tnchb.mongodb.net/webconnectDB", {
   useNewUrlParser: true,
 });
 const formatMessage = require("./utils/messages");

@@ -13,6 +13,9 @@
   },
   "author": "Four Muskeeters",
   "license": "ISC",
+  "engines": {
+    "node": "14.17.3"
+  },
   "bugs": {
     "url": "https://github.com/d17012002/Web-Connect/issues"
   },
