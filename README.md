@@ -10,7 +10,7 @@ Diagram for bidirectional communication
 # Demo Video
 
 
+https://user-images.githubusercontent.com/81901470/146245054-83ba3ef4-4e8c-4cff-b53e-c10c16dde3ef.mp4
 
 
-https://user-images.githubusercontent.com/81901470/146244895-5037aeec-0f31-49d8-85bb-976ef59e1d9d.mp4
 
