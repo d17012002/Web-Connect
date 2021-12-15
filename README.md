@@ -5,6 +5,7 @@ Socket.IO is a library that enables real-time, bidirectional and event-based com
 1. A Node.js server: Source | API
 2. A Javascript client library for the browser (which can be also run from Node.js): Source | API
 Diagram for bidirectional communication
+![socket](https://user-images.githubusercontent.com/81901470/146245936-ae438f03-c22c-41f3-8675-f5f43468ee08.PNG)
 
 
 # Demo Video
