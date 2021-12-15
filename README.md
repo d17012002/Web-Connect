@@ -3,7 +3,7 @@ Online web chat application where you can get connected with people of same doma
 This project is mainly based on a library called Socket-io. 
 Socket.IO is a library that enables real-time, bidirectional and event-based communication between the browser and the server. It consists of:
 1. A Node.js server: Source | API
-2. A Javascript client library for the browser (which can be also run from Node.js): Source | API
+2. A Javascript client library for the browser (which can be also run from Node.js): Source | API <br>
 Diagram for bidirectional communication
 ![socket](https://user-images.githubusercontent.com/81901470/146245936-ae438f03-c22c-41f3-8675-f5f43468ee08.PNG)
 
