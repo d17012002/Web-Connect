@@ -43,10 +43,6 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 // default users
-const anurag = new User({
-  name: "Anurag Kumar",
-  password: "anurag123",
-});
 const ansh = new User({
   name: "Ansh Chauhan",
   password: "ansh123",
@@ -60,7 +56,7 @@ const anant = new User({
   password: "anant123",
 });
 
-const defaultUsers = [anurag, ansh, subs, anant];
+const defaultUsers = [ansh, subs, anant];
 
 //home route - sign up
 app.get("/", function (req, res) {
