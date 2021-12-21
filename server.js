@@ -4,9 +4,12 @@ const path = require("path");
 const http = require("http");
 const socketio = require("socket.io");
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://webconnect:webconnect123@cluster0.tnchb.mongodb.net/webconnectDB", {
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  "mongodb+srv://webconnect:webconnect123@cluster0.tnchb.mongodb.net/webconnectDB",
+  {
+    useNewUrlParser: true,
+  }
+);
 const formatMessage = require("./utils/messages");
 const {
   userJoin,
@@ -113,19 +116,13 @@ app.post("/", function (req, res) {
 
   // storing documents in database -> Sign in
   if (req.body.btn1 === "signIn") {
-    if (NAME === "" || pass === "") {
+    if (NAME === "" || pass === "" || email === "") {
       res.redirect("/error");
     } else {
-      if (NAME != "" && pass != "" && email != "") {
         const newUser = new User({
           name: NAME,
           password: pass,
         });
-        newUser.save();
-      } else {
-        res.redirect("/error");
-      }
-
       // Logic behind vitbhopal domain signIn only
       var pattern = "vitbhopal.ac.in";
       var count = 0;
@@ -136,6 +133,7 @@ app.post("/", function (req, res) {
         count++;
       }
       if (count == pattern.length) {
+        newUser.save();
         res.redirect("/chatcordLogin");
       } else {
         res.redirect("/error");
@@ -188,12 +186,12 @@ io.on("connection", (socket) => {
 });
 
 //users list
-app.get("/users", function(req, res){
-  User.find(function(err, users){
-    if(err){
+app.get("/users", function (req, res) {
+  User.find(function (err, users) {
+    if (err) {
       console.log(err);
-    }else{
-      res.render("users", {key: users});
+    } else {
+      res.render("users", { key: users });
     }
   });
 });
