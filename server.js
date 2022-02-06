@@ -4,8 +4,8 @@ const path = require("path");
 const http = require("http");
 const socketio = require("socket.io");
 const mongoose = require("mongoose");
-mongoose.connect(
-  "mongodb+srv://webconnect:webconnect123@cluster0.tnchb.mongodb.net/webconnectDB",
+const databaseURL = require(__dirname + "/public/js/mongoDB.js");
+mongoose.connect( databaseURL ,
   {
     useNewUrlParser: true,
   }
