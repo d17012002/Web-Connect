@@ -1,4 +1,6 @@
 # Web-Connect
+![Web-Connect](https://socialify.git.ci/d17012002/Web-Connect/image?description=1&descriptionEditable=Online%20web%20chat%20application%20where%20you%20can%20get%20connected%20with%20people%20of%20same%20domain%20and%20interest.%20&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2Fd17012002%2FWeb-Connect%2Fmaster%2Fpublic%2Fimg%2Flogo.png&name=1&owner=1&pattern=Solid&stargazers=1&theme=Dark)
+
 Online web chat application where you can get connected with people of same domain and interest. Includes various features like private chat, video calling, etc.
 This project is mainly based on a library called Socket-io. 
 Socket.IO is a library that enables real-time, bidirectional and event-based communication between the browser and the server. It consists of:
